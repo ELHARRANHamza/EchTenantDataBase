@@ -19,6 +19,6 @@ public class sampleDbMigratorModule : AbpModule
     public override void ConfigureServices(ServiceConfigurationContext context)
     {
         Configure<AbpBackgroundJobOptions>(options => options.IsJobExecutionEnabled = false);
-        context.Services.Replace(ServiceDescriptor.Transient<DefaultConnectionStringResolver, MultiTenantConnectionStringResolver>());
+        //context.Services.Replace(ServiceDescriptor.Transient<DefaultConnectionStringResolver, MultiTenantConnectionStringResolver>());
     }
 }

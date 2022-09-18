@@ -44,7 +44,6 @@ public class sampleEntityFrameworkCoreModule : AbpModule
                  * default repositories only for aggregate roots */
             options.AddDefaultRepositories(includeAllEntities: true);
         });
-        context.Services.Replace(ServiceDescriptor.Transient<DefaultConnectionStringResolver, MultiTenantConnectionStringResolver>());
 
         context.Services.AddAbpDbContext<DemoDbContext>(options =>
         {
