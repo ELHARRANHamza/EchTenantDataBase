@@ -115,7 +115,7 @@ public class sampleWebModule : AbpModule
 
     private void ConfigureAuthentication(ServiceConfigurationContext context, IConfiguration configuration)
     {
-        context.Services.Replace(ServiceDescriptor.Scoped<DefaultConnectionStringResolver, MultiTenantConnectionStringResolver>());
+        //context.Services.Replace(ServiceDescriptor.Scoped<DefaultConnectionStringResolver, MultiTenantConnectionStringResolver>());
 
         context.Services.AddAuthentication()
             .AddJwtBearer(options =>

@@ -16,12 +16,20 @@ namespace sample.EntityFrameworkCore
         {
         }
         public DbSet<Book> Books { get; set; }
+        public DbSet<Person> People { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
             builder.Entity<Book>(b =>
             {
                 b.ToTable(sampleConsts.DbTablePrefix + "Books", sampleConsts.DbSchema);
+                b.ConfigureByConvention();
+            });
+
+            builder.Entity<Person>(b =>
+            {
+                b.ToTable(sampleConsts.DbTablePrefix + "Peoples", sampleConsts.DbSchema);
                 b.ConfigureByConvention();
             });
         }
