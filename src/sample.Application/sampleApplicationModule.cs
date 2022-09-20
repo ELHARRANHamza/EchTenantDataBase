@@ -27,7 +27,7 @@ public class sampleApplicationModule : AbpModule
 {
     public override void ConfigureServices(ServiceConfigurationContext context)
     {
-        //context.Services.Replace(ServiceDescriptor.Transient<IConnectionStringResolver, TenantConnectionResolver>());
+        context.Services.Replace(ServiceDescriptor.Transient<IConnectionStringResolver, TenantConnectionResolver>());
 
         Configure<AbpAutoMapperOptions>(options =>
         {
